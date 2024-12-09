@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+  
+  <body>
+    <style>
+        
+        
+        .text_header{
+            font-size: 10px;
+        }
+        .latest_pr_but{
+            border-radius:7%;
+        }
+        .container-fluid {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+    </style>
+    <div class="container-fluid">
+
+
+<!-- HEADER -->
+<header style="background-color: #F6F5F1; width: 100%; padding-top: 50px; padding-left: 70px; padding-right: 70px;">
+    <div class="container-fluid row">
+        <style>
+            .text-style-links {
+                font-size: 15px;
+                align-items: center;
+            }
+            .text-style-email {
+                font-size: 14px;
+                align-items: center;
+            }
+            .custom-button {
+                font-size: 12px;
+                width: 80px;
+                height: 40px;
+                border-radius: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #ffffff   ;
+                color: #000000;
+                border: 1px solid #F6F5F1;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            .custom-button:hover {
+                background-color: #7D7D7D; 
+                color: rgb(255, 255, 255); 
+                border: 1px solid #F6F5F1;
+                
+            }
+            .custom-link {
+                color: #242424; 
+                transition: color 0.3s;
+                text-decoration: none; 
+            }
+            .custom-link:hover {
+                color: #7d7d7d; 
+                text-decoration: underline;
+            }
+        </style>
+        
+        <div class="col-6 d-flex align-items-center text-style-email">
+            <span id="email">viramtvchk@gmail.com</span>
+            <button class="btn btn-primary ms-2 custom-button" onclick="copyEmail()">Copy</button>
+            <a href="/Users/viramatvijcuk/Desktop/portfolio website/Vira Matviichuk Resume.pdf" class="btn btn-secondary ms-2 custom-button" download>Resume</a>
+        </div>
+        
+        <script>
+            function copyEmail() {
+                const emailText = document.getElementById('email').textContent;
+                navigator.clipboard.writeText(emailText)
+                    .then(() => {
+                        alert('Email copied to clipboard!');
+                    })
+                    .catch(err => {
+                        console.error('Failed to copy: ', err);
+                    });
+            }
+        </script>
+        
+        <div class="col-6 d-flex justify-content-end text-style-links">
+            <a class="custom-link" href="https://www.upwork.com/nx/find-work/">UpWork</a>
+            <span class="mx-2">  /  </span>
+            <a class="custom-link" href="https://www.linkedin.com/in/vira-matviichuk/">LinkedIn</a>
+            <span class="mx-2">  /  </span>
+            <a class="custom-link" href="https://github.com/matviichukvv">GitHub</a>
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->            
+        <style> 
+            .viras {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%; /* Makes the image circular */
+                border-width: 3px;
+                border:2px solid #ffffff;
+                margin-left: 80px;
+                
+            }
+            
+            .custom-section {
+                min-height: 600px; /* Adjust the height as needed */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center; 
+                background-color: #F6F5F1;
+                border-bottom-left-radius: 120px;
+                border-bottom-right-radius: 120px;
+                border-bottom: 1px solid #E0DEDF;
+                margin-top: -20px;
+            }
+            
+            .button-container {
+                margin-top: 0px; /* Adjust as needed */
+                
+            }
+            .name{
+                font-size: 12px;
+                display:flex;
+                width: 120px;
+                height: 35px;
+                border-radius: 30px;
+                background-color: #ffffff;
+                justify-content: center; /* Center text horizontally */
+                align-items: center;
+                margin-top: 30px;
+                margin-left: -30px;
+                transform: rotate(-10deg);
+                animation: float 2s ease-in-out infinite; /* Animation */
+}
+
+        @keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(-10deg); /* Original position with rotation */
+    }
+    50% {
+        transform: translateY(-5px) rotate(-10deg); /* Move 3px up with rotation */
+    }
+    
+}
+          </style>
+          
+          <div class="row custom-section">
+              <div class="col-12 d-flex justify-content-center">
+                  <img src="https://avatars.githubusercontent.com/u/148452460?v=4" alt="Data Analyst" class="viras">
+                  <div class="name">  
+                    Vira Matviichuk
+                  </div> 
+              </div>
+              <div class="h2 text-center col-12 d-flex justify-content-center mt-3">
+                <p> Analyzing data,<br>uncovering insights,<br>and driving impact. </p>
+              </div>
+              <style>
+                .latest-projects-button {
+                    font-size: 12px; /* Set font size */
+                    width: 150px; /* Set specific width */
+                    height: 50px; /* Set specific height */
+                    border-radius: 30px; /* Rounded corners */
+                    display: flex; /* Use flexbox for centering */
+                    justify-content: center; /* Center text horizontally */
+                    align-items: center; /* Center text vertically */
+                    background-color: #7d7d7d; /* Light background color */
+                    color: #ffffff;
+                    border: 1px solid #ffffff; /* Optional: Bootstrap primary border */
+                    transition: background-color 0.3s, color 0.3s; /* Transition effects for hover */
+                }
+              
+                .latest-projects-button:hover {
+                    background-color: #ffffff; /* Change background on hover */
+                    color: #000000; /* Change text color on hover */
+                    border-color: #ffffff; /* Keep border color same as background */
+                }
+              </style>
+              <div class="col-12 d-flex justify-content-center button-container">
+                <button type="button" class="btn latest-projects-button" onclick="window.location.href='https://github.com/matviichukvv'">
+                    Latest Projects
+                </button>
+            </div>
+          </div>
+
+
+  <!-- Skills -->   
+  <style>
+    .skills {
+
+        justify-content: center; /* Center text horizontally */
+        align-items: center;
+        border-bottom-left-radius: 120px;
+        border-bottom-right-radius: 120px;
+        border-bottom: 1px solid #E0DEDF;
+        overflow: hidden;      /* Prevent overflow */
+        white-space: nowrap;   /* Prevent images from wrapping */
+        position: relative;    /* For positioning */
+        height: 170px;         /* Set height to match image size */
+        }
+
+        .skills-content {
+            display: inline-block; /* To allow inline-block behavior */
+            animation: move-left linear infinite; /* Animation settings (duration will be set dynamically) */
+        }
+
+        @keyframes move-left {
+            to {
+                transform: translateX(-100%); /* Move left by 100% of content width */
+            }
+        }
+
+        .skills-icons {
+            height: 50px;
+            width: auto;
+            display: inline-block; /* Ensure icons are displayed inline */
+            margin: 0 50px;       /* Optional: spacing between images */
+        }
+    </style>
+  
+  <div class="container-fluid ">
+    <div class="row align-items-center text-center skills">
+        <div class="col skills-content" id="skills-content">
+            <!-- Original set of images -->
+            <img src="/Users/viramatvijcuk/Desktop/portfolio website/excel.png" class="skills-icons">
+            <img src="/Users/viramatvijcuk/Desktop/portfolio website/sql.png" class="skills-icons">
+            <img src="/Users/viramatvijcuk/Desktop/portfolio website/power bi.webp" class="skills-icons">
+            <img src="/Users/viramatvijcuk/Desktop/portfolio website/python.png" class="skills-icons">
+            <img src="/Users/viramatvijcuk/Desktop/portfolio website/tableau.png" class="skills-icons">
+            
+            <!-- Duplicate set of images for seamless scrolling -->
+            <img src="/Users/viramatvijcuk/Desktop/portfolio website/excel.png" class="skills-icons">
+            <img src="/Users/viramatvijcuk/Desktop/portfolio website/sql.png" class="skills-icons">
+            <img src="/Users/viramatvijcuk/Desktop/portfolio website/power bi.webp" class="skills-icons">
+            <img src="/Users/viramatvijcuk/Desktop/portfolio website/python.png" class="skills-icons">
+            <img src="/Users/viramatvijcuk/Desktop/portfolio website/tableau.png" class="skills-icons">
+        </div>
+    </div>
+</div>
+
+<script>
+    // Ensure the animation duration matches the total width of the content
+    window.onload = function() {
+        const skillsContent = document.getElementById('skills-content');
+        const totalWidth = skillsContent.scrollWidth; // Total width of the content
+        const duration = totalWidth / 50; // Adjust speed: here, 50px/s
+        skillsContent.style.animationDuration = duration + 's'; // Set dynamic duration
+    };
+</script>
+
+
+ <!-- About -->
+       <style> 
+        .data-section {
+            height: 600px; /* Set section height */
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            padding: 30px; /* Optional padding */
+        }
+        
+        .text_header {
+            
+            margin-bottom: 40px; /* Space below title */
+            text-align: center; /* Center title text */
+        }
+
+        .icon-title-text {
+            width: 350px; /* Set a fixed width for each column */
+            text-align: center; /* Center align text in each column */
+          
+        }
+
+        .icon-title-text img {
+            margin-top: 40px;
+            width: 50px;
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 10px;
+        }
+        .divider {
+            width: 50%;
+            height: 1px;
+            background-color: #ccc;
+            position: relative;
+            margin: 20px 0;
+        }
+        .divider-text {
+            position: absolute;
+            left: 50%;
+            top: -17px; /* Adjust as needed */
+            transform: translateX(-50%);
+            background: #7d7d7d; /* Or whatever background color */
+            padding: 0 30px; /* Space around text */
+            border: 1px solid #7d7d7d;
+            border-radius: 30px;
+            color:#ffffff;
+            height: 35px;
+            justify-content: center; 
+            align-items: center;
+            display:flex;
+            padding: 0 25px;
+            
+        }
+    </style>
+
+<div class="container-fluid">
+    <div class="data-section">
+        <div class="col-12 text_header">
+            <h3>Making data work for you!</h3>
+        </div>
+        <div class="divider">
+            <span class="divider-text">How?</span>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4 mb-4 icon-title-text">
+                <img src="/Users/viramatvijcuk/Desktop/portfolio website/Analyse-removebg-preview.png" alt="Icon 1"> <!-- Replace with your icons -->
+                <h5>Analyzing</h5>
+                <p>Uncovering patterns and insights<br>by diving deep into data<br>to answer complex questions.</p>
+            </div>
+            <div class="col-md-4 mb-4 icon-title-text">
+                <img src="/Users/viramatvijcuk/Desktop/portfolio website/visualise-removebg-preview.png" alt="Icon 2"> <!-- Replace with your icons -->
+                <h5>Visualizing</h5>
+                <p>Transforming raw data<br>into compelling visuals that tell<br>a clear and impactful story.</p>
+            </div>
+            <div class="col-md-4 mb-4 icon-title-text">
+                <img src="/Users/viramatvijcuk/Desktop/portfolio website/report-removebg-preview.png" alt="Icon 3"> <!-- Replace with your icons -->
+                <h5>Reporting</h5>
+                <p>Delivering actionable reports that<br>translate insights into<br>strategies and decisions.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .certificate {
+        height: 600px; /* Set section height */
+        display: flex;
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        background-color: #F6F5F1;
+        border-radius: 120px;
+        border-top: 1px solid #e5e4e3;
+        border-bottom: 1px solid #e5e4e3;
+    }
+    .how-img {
+        flex: 1; /* Allow image column to grow */
+        display: flex; /* Center image in its column */
+        justify-content: center; /* Center image horizontally */
+        align-items: center; /* Center image vertically */
+        margin-left: 80px;
+    }
+
+    .how-img img {
+    width: 465px; /* Set image width */
+    height: auto; /* Set image height */
+    border: 1px solid #ccc; /* Set border size and color */
+    border-radius: 10px; /* Keep the rounded shape */
+    object-fit: cover; /* Ensure the image covers the space */
+    }
+
+    .text-content {
+        flex: 1; /* Allow text column to grow */
+        margin-left: -10px;
+        margin-right: 150px;
+        margin-top: 12px;
+    }
+    </style>
+
+
+<div class="container-fluid">
+    <div class="row certificate">
+        <div class="how-img">
+            <img src="/Users/viramatvijcuk/Desktop/portfolio website/IBM Data analyst professional certificate copy.pdf" class="img-fluid" alt=""/>
+        </div>
+        <div class="text-content">
+            <h4>IBM Data Analyst Professional Certificate</h4>
+            <h6 class="subheading">Issued May 2024<br>Credential ID: TNHFFY2KUS8A</h6>
+            <p class="text-muted">This IBM Professional Certificate is earned after successfully completing 9 courses on various topics in Data Analytics. The learner understands the core principles of data analysis and has worked hands-on with a variety of data sources, project scenarios, and data analysis tools, including Excel, SQL, Relational Databases, Python, Jupyter Notebooks, and Cognos Analytics, gaining practical experience with data manipulation, data analysis, and data visualization.</p>
+            <p class="text-muted">The earner of this Certificate has demonstrated proficiency in applying different analytical techniques by analyzing real-world datasets, creating visualizations & interactive dashboards, and presenting reports to share findings of data analysis, and is now equipped with skills for an entry-level role in data analytics..</p>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- PROJECT -->
+ <style>
+    .data-section2 {
+            height: 600px; /* Set section height */
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            background-color: #ffffff;
+            
+        }
+ </style>
+<div class="container-fluid">  
+    <div class="data-section2">
+        <div class="col-12 text_header">
+            <h2>Latest Projects</h2>
+        </div>
+        <div class="row text-center mt-3 ">
+            <div class="col-md-4 mb-4 icon-title-text">
+                <h5>first</h5>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <img src="/Users/viramatvijcuk/Desktop/portfolio website/Analyse-removebg-preview.png" alt="Icon 1"> 
+            </div>
+            <div class="col-md-4 mb-4 icon-title-text">
+                <h5>second</h5>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <img src="/Users/viramatvijcuk/Desktop/portfolio website/visualise-removebg-preview.png" alt="Icon 2">
+            </div>
+            <div class="col-md-4 mb-4 icon-title-text">
+                <h5>third</h5>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <img src="/Users/viramatvijcuk/Desktop/portfolio website/report-removebg-preview.png" alt="Icon 3"> 
+            </div>
+        </div>
+    </div>
+</div>
+        
+  </body>
+
+
+
+<!-- FOOTER -->
+<style>
+    .custom-footer {
+        height: 400px;
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        justify-content: space-between; /* Distribute space between top and bottom */
+        align-items: center; /* Center align content horizontally */
+        background-color:#F6F5F1 !important; /* Change background to white */
+        border-top-left-radius: 120px;
+        border-top-right-radius: 120px;
+        border-top: 1px solid #E0DEDF;
+        margin: 0;
+        padding: 70px;
+    }
+    .footer-title {
+        text-align: center; /* Center align title text */
+        
+    }
+    .footer-links {
+        display: flex;
+        justify-content: space-between; /* Space between links */
+        width: 100%; /* Full width for link div */
+    }
+    .footer-image {
+        width: 100px; /* Set image width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    .copyright {
+        text-align: left; /* Align copyright text to the left */
+    }
+    .social-links {
+        text-align: right; /* Align links to the right */
+    }
+    .custom-button-email {
+                font-size: 10px;
+                width: 80px;
+                height: 40px;
+                border-radius: 60px;
+                display: center;
+                justify-content: center;
+                align-items: center;
+                background-color: #ffffff   ;
+                color: #000000;
+                border: 1px solid #F6F5F1;
+                transition: background-color 0.3s, color 0.3s;
+                margin-top: 10px;
+            }
+            .custom-button-email:hover {
+                background-color: #7D7D7D; 
+                color: rgb(255, 255, 255); 
+                border: 1px solid #F6F5F1;
+                
+            }
+    </style>
+
+
+<footer class="bg-body-tertiary custom-footer">
+<div class="container-fluid text-center mt-5">
+    <img src="/Users/viramatvijcuk/Desktop/portfolio website/contact.png" alt="Logo" class="footer-image"> <!-- Replace with your icon -->
+    <h5 class="footer-title">Tell me about your next project</h5> <!-- Title text -->
+    <button class="btn btn-primary ms-2 custom-button-email" onclick="copyEmail()">Email</button>
+</div>
+
+<div class="container-fluid">
+    <div class="copyright">© 2024 All rights reserved</div>
+    <div class="social-links">
+        <a class="text-black text-decoration-none" href="https://www.upwork.com/nx/find-work/">UpWork</a>
+        <span class="mx-1"> / </span>
+        <a class="text-black text-decoration-none" href="https://www.linkedin.com/in/vira-matviichuk/">LinkedIn</a>
+        <span class="mx-1"> / </span>
+        <a class="text-black text-decoration-none" href="https://github.com/matviichukvv">GitHub</a>
+    </div>
+</div>
+</footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>
