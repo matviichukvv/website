@@ -565,7 +565,7 @@ html, body {
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 32px;
+        gap: 48px;
     }
     .reveal {
         display: flex;
@@ -576,15 +576,7 @@ html, body {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        background-color: #F6F5F1;
-        border: 1px solid #E0DEDF;
-        border-radius: 40px;
-        padding: 44px 36px 36px;
-        transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-    .client-card:hover {
-        transform: translateY(-6px);
-        border-color: #cfcdca;
+        padding: 0 24px;
     }
     .client-logo {
         height: 80px;
@@ -592,7 +584,6 @@ html, body {
         max-width: 100%;
         object-fit: contain;
         margin-bottom: 20px;
-        mix-blend-mode: multiply;
     }
     .client-name {
         font-size: 18px;
@@ -653,9 +644,6 @@ html, body {
             transform: none;
             transition: none;
         }
-        .client-card {
-            transition: none;
-        }
     }
     @media (max-width: 767px) {
         .clients {
@@ -670,11 +658,10 @@ html, body {
         }
         .clients-grid {
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 56px;
         }
         .client-card {
-            border-radius: 28px;
-            padding: 32px 22px 28px;
+            padding: 0 8px;
         }
         .client-logo {
             height: 64px;
