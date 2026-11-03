@@ -548,123 +548,205 @@ html, body {
 
 
 <style>
-    .data-section2 {
-        height: 600px;
+    .clients {
+        margin-top: 40px;
+        padding: 80px 24px 100px;
+        background-color: #ffffff;
+    }
+    .clients-title {
+        text-align: center;
+        margin-bottom: 48px;
+    }
+    .clients-title h2 {
+        margin: 0;
+    }
+    .clients-grid {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+    }
+    .reveal {
+        display: flex;
+    }
+    .client-card {
+        flex: 1;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: #F6F5F1;
+        border: 1px solid #E0DEDF;
+        border-radius: 40px;
+        padding: 44px 36px 36px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .client-card:hover {
+        transform: translateY(-6px);
+        border-color: #cfcdca;
+    }
+    .client-logo {
+        height: 80px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        margin-bottom: 20px;
+        mix-blend-mode: multiply;
+    }
+    .client-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0 0 6px;
+    }
+    .client-intro {
+        font-size: 15px;
+        color: #555555;
+        line-height: 1.5;
+        margin: 0 0 14px;
+    }
+    .client-body {
+        flex: 1;
+    }
+    .client-list {
+        text-align: left;
+        margin: 0 auto;
+        width: fit-content;
+        max-width: 100%;
+        padding-left: 20px;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+    .client-button {
+        font-size: 12px;
+        width: 80px;
+        height: 40px;
+        margin-top: 28px;
+        border-radius: 30px;
+        display: flex;
         justify-content: center;
         align-items: center;
+        background-color: #7d7d7d;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .client-button:hover {
         background-color: #ffffff;
-        margin-top: 40px; 
+        color: #000000;
+        border-color: #ffffff;
     }
-
-    /* Default icon styles (if needed) */
-    .icon-title-text2 {
-        text-align: center;
-        padding: 80px;
-        margin-top: 0px;
-        margin-bottom: 10px;
+    .js .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        transition-delay: var(--d, 0s);
     }
-
-    /* Specific icon size overrides */
-    .icon-dni {
-        width: auto;
-        height: 80px;
+    .js .reveal.visible {
+        opacity: 1;
+        transform: none;
     }
-
-    .icon-cigar {
-        width: auto; /* Make this one larger */
-        height: 80px;
+    @media (prefers-reduced-motion: reduce) {
+        .js .reveal {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+        .client-card {
+            transition: none;
+        }
     }
-     .client-button {
-                    font-size: 12px; /* Set font size */
-                    width: 70px; /* Set specific width */
-                    height: 40px; /* Set specific height */
-                    border-radius: 30px; /* Rounded corners */
-                    display: flex; /* Use flexbox for centering */
-                    justify-content: center; /* Center text horizontally */
-                    align-items: center; /* Center text vertically */
-                    background-color: #7d7d7d; /* Light background color */
-                    color: #ffffff;
-                    border: 1px solid #ffffff; /* Optional: Bootstrap primary border */
-                    transition: background-color 0.3s, color 0.3s; /* Transition effects for hover */
-                }
-              
-                .client-button:hover {
-                    background-color: #ffffff; /* Change background on hover */
-                    color: #000000; /* Change text color on hover */
-                    border-color: #ffffff; /* Keep border color same as background */
-                }
-                @media (max-width: 767px) {
-    .data-section2 {
-        height: auto;
-        margin-top: 20px;
-        padding: 20px 10px;
+    @media (max-width: 767px) {
+        .clients {
+            margin-top: 20px;
+            padding: 48px 16px 64px;
+        }
+        .clients-title {
+            margin-bottom: 28px;
+        }
+        .clients-title h2 {
+            font-size: 22px;
+        }
+        .clients-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .client-card {
+            border-radius: 28px;
+            padding: 32px 22px 28px;
+        }
+        .client-logo {
+            height: 64px;
+        }
+        .client-button {
+            width: 100px;
+        }
     }
-
-    .icon-title-text2 {
-        padding: 20px;
-        margin-top: 0 !important;
-    }
-
-    .icon-dni,
-    .icon-cigar {
-        height: 60px; /* smaller icons for phone */
-    }
-
-    .client-button {
-        width: 100px;
-        height: 40px;
-        font-size: 12px;
-        margin-top: 10px;
-    }
-
-    .icon-title-text2 p {
-        font-size: 14px;
-        line-height: 1.5;
-        text-align: center;
-    }
-
-    .text_header h2 {
-        font-size: 22px;
-    }
-}
-
 </style>
 
-<div class="container-fluid">  
-    <div class="data-section2">
-<div class="col-12 text_header">
-    <h2>Current Clients</h2>
-    <hr style="border-top: 2px solid #ccc; width: 220px; margin: 10px auto;">
-</div>
-        <div class="row text-center ">
-            <div class="col-md-6 mb-2 icon-title-text2 d-flex flex-column align-items-center " style="margin-top: -60px">
-                <img src="https://github.com/matviichukvv/website/blob/main/DNI%20LOGO.png?raw=true" class="img-fluid icon-dni mb-3" alt="Icon 1"/>
-                <p>
-                    <span style="font-size: 18px; font-weight: bold;">DNI Consulting</span>
-                    is a consulting company that supports private schools with strategic planning, research, and data-driven solutions. At DNI, I help by analyzing survey data, creating dashboards, and translating complex information into insights schools can use to make informed decisions. We're also exploring ways to implement AI to make our work more efficient and uncover deeper insights.</p>
-                <button type="button" class="btn client-button" onclick="window.location.href='https://www.dniconsulting.biz'">
-                    Visit
-                </button>
-            </div>
-            <div class="col-md-6 mb-2 icon-title-text2 d-flex flex-column align-items-center" style="margin-top: -60px">
+<script>document.documentElement.classList.add('js');</script>
 
-                <img src="https://github.com/matviichukvv/website/blob/main/CAA%20logo.png?raw=true" class="img-fluid icon-cigar mb-3" alt="Icon 2"/>
-                <p>
-                    <span style="font-size: 18px; font-weight: bold;">The Cigar Association of America (CAA)</span>
-                    is a national trade organization that represents cigar manufacturers, importers, and distributors. At CAA, I help by pulling import and export data from the U.S. Census Bureau to track cigar shipments, and I also support the team by updating marketing data and visuals on the website.
-            
-                </p>
-               
-                <button type="button" class="btn client-button" onclick="window.location.href='https://cigarsusa.org'">
-                    Visit
-                </button>
+<div class="container-fluid">
+    <div class="clients">
+        <div class="clients-title reveal" style="display: block;">
+            <h2>Current Clients</h2>
+            <hr style="border-top: 2px solid #ccc; width: 220px; margin: 10px auto;">
+        </div>
+        <div class="clients-grid">
+            <div class="reveal" style="--d: 0.2s;">
+                <div class="client-card">
+                    <img src="DNI%20LOGO.png" class="client-logo" alt="DNI Consulting logo">
+                    <h3 class="client-name">DNI Consulting</h3>
+                    <div class="client-body">
+                        <p class="client-intro">Consulting company supporting private schools with strategic planning, research, and data-driven solutions.</p>
+                        <ul class="client-list">
+                            <li>Survey data analysis</li>
+                            <li>Dashboards for schools</li>
+                            <li>Clear insights from complex information</li>
+                            <li>Exploring AI to work more efficiently</li>
+                        </ul>
+                    </div>
+                    <a class="btn client-button" href="https://www.dniconsulting.biz">Visit</a>
+                </div>
             </div>
-
+            <div class="reveal" style="--d: 0.45s;">
+                <div class="client-card">
+                    <img src="CAA%20logo.png" class="client-logo" alt="Cigar Association of America logo">
+                    <h3 class="client-name">The Cigar Association of America (CAA)</h3>
+                    <div class="client-body">
+                        <p class="client-intro">National trade organization for cigar manufacturers, importers, and distributors.</p>
+                        <ul class="client-list">
+                            <li>Import and export data from the U.S. Census Bureau</li>
+                            <li>Tracking cigar shipments</li>
+                            <li>Updating marketing data and visuals on the website</li>
+                        </ul>
+                    </div>
+                    <a class="btn client-button" href="https://cigarsusa.org">Visit</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<script>
+    (function () {
+        var items = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window)) {
+            items.forEach(function (el) { el.classList.add('visible'); });
+            return;
+        }
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        items.forEach(function (el) { observer.observe(el); });
+    })();
+</script>
 
 
   </body>
