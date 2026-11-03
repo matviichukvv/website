@@ -29,6 +29,19 @@
     padding: 0 !important;
 }
 
+/* Keep the page exactly as wide as the screen: no sideways scrolling or blank strips */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Bootstrap rows have small negative side margins that push the page wider than the screen */
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 
     </style>
     <div class="container-fluid">
